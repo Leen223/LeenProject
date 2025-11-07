@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leen Space Website</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="#home" class="logo"> Leen<span>Space </span></a>
+
+        <i class='bx bx-menu' id="menu-icon"></i>
+
+        <nav class="navbar">
+            <a href="#home" class="active">الصفحة الرئيسية</a>
+            <a href="#services">خبراتي</a>
+            <a href="#testimonials"> مجالاتي</a>
+            <a href="#contact">تواصل</a>
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1> اهلا انا <span>  لين</span></h1>
+            <h3 class="text-animation"> <span> </span></h3>
+            <p>اهلا بكم في مساحة لين</p>
+            <p>انا طالبة هندسة برمجيات بالسنه الثانية مهتمة في تطوير المواقع
+                  والحوسبة السحابية
+ماعندي خبرة تذكر ولكن ترقبوني بالمستقبل ان شاء الله 
+والحمدلله هذا اول موقع لي
+                اتمنى ينال اعجابكم
+            </p>
+
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/leen-alfulayt-118824346/?trk=public-profile-join-page"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://github.com/Leen223"><i class='bx bxl-github'></i></a>
+                <a href="https://www.instagram.com/leencoder?igsh=cXZxMndwY2ptamZx"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="https://x.com/leenswe?s=21"><i class='bx bxl-twitter'></i></a>
+            </div>
+
+            <div class="btn-group">
+                <a href="#contact" class="btn">اضغط هنا</a>
+            </div>
+        </div>
+        <div class="home-img">
+            <img src="me.jpg" alt="">
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2 class="heading">خبراتي</h2>
+        <div class="services-container">
+            <div class="service-box">
+                <div class="service-info">
+                    <h4>🚀  اهتماماتي</h4>
+                    <p>
+                        مهتمة للبرمجة في مجال الفضاء مثل مواقع تخص الفضاء
+                         او برامج وانظمة, ايضا مهتمة بالحوسبة السحابية و تطوير المواقع والتطبيقات
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="service-box">
+                <div class="service-info">
+                    <h4>📱 لغات</h4>
+                    <ul>
+                        <li>C#</li>
+                        <li>C++</li>
+                        <li>Python</li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="service-box">
+                <div class="service-info">
+                    <h4>📝  الشهادات</h4>
+                    <p>
+                        
+                        Python Basics University of Michigan <br>
+                        Python Classes and Inheritance University of Michigan<br>
+                        Python Functions, Files, and Dictionaries University of Michigan<br>
+                        Getting Started with Front-End and Web Development IBM
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="service-box">
+                <div class="service-info">
+                    <h4>المعسكرات</h4>
+                    <p>
+                        معسكر تطوير الويب هاش بلس
+
+
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="testimonials-box">
+            <h2 class="heading">مجالاتي</h2>
+
+            <div class="wrapper">
+                <div class="testimonial-item">
+                    <img src="webde.jpeg" alt="">
+                    <h2>تطوير الويب </h2>
+                 </div>
+
+                <div class="testimonial-item">
+                    <img src="cloud.jpeg" alt="">
+                    <h2>الحوسبة السحابية</h2>
+                    
+                </div>
+
+                <div class="testimonial-item">
+                    <img src="app.jpeg" alt="">
+                    <h2>تطوير التطبيقات</h2>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="heading">تواصل <span>معي</span></h2>
+<form action="submit_form.php" method="POST">
+    <div class="input-group">
+        <div class="input-box">
+            <input type="text" name="fullname" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+        </div>
+        <div class="input-box">
+            <input type="number" name="phone" placeholder="Phone Number">
+            <input type="text" name="subject" placeholder="Subject" required>
+        </div>
+    </div>
+
+    <div class="input-group-2">
+        <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+        <input type="submit" name="register" value="Send Message" class="btn">
+    </div>
+</form>
+    </section>
+
+    <footer class="footer">
+        <div class="social">
+             <a href="https://www.linkedin.com/in/leen-alfulayt-118824346/?trk=public-profile-join-page"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://github.com/Leen223"><i class='bx bxl-github'></i></a>
+                <a href="https://www.instagram.com/leencoder?igsh=cXZxMndwY2ptamZx"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="https://x.com/leenswe?s=21"><i class='bx bxl-twitter'></i></a>
+        </div>
+
+        <p class="copyright">
+            ©  LeenSpace | جميع الحقوق محفوظه
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
