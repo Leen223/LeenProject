@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
     <div class="success-box">
         <h1><?php echo $successMessage; ?></h1>
         <p>شكرًا لاهتمامك، سيتم التواصل معك قريبًا <br></p>
-        <a href="../index.html" class="btn">العودة للصفحة الرئيسية</a>
+        <a href="index.html" class="btn">العودة للصفحة الرئيسية</a>
     </div>
 <?php endif; ?>
 
