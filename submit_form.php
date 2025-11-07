@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
     $subject = $_POST['subject'];
     $message = $_POST['message'];
 
-    $sql = "INSERT INTO messages (fullname, phone, email, subject, message, created_at)
+    $sql = "insert INTO messages (fullname, phone, email, subject, message, created_at)
             VALUES ('$fullname', '$phone', '$email', '$subject', '$message', CURDATE())";
 
     if (mysqli_query($conn, $sql)) {
