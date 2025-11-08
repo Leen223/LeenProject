@@ -14,7 +14,7 @@
     --text-color: white;
     --main-color: #f1589f;
   }
-  
+
   html {
     font-size: 70%;
     overflow-x: hidden;
@@ -536,7 +536,12 @@
     font-size: 16px;
     color: white;
   }
-  
+  @media (max-width: 768px) {
+  .home-content, .home-img {
+    flex-direction: column;
+    text-align: center;
+  }
+}
   @media (max-width: 1285px) {
     html {
       font-size: 55%;
