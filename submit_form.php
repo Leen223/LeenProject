@@ -3,7 +3,7 @@ include 'LeenDB.php';
 
 $successMessage = "";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET['register'])) {
+if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['register'])) {
     $fullname = $_GET['fullname'];
     $phone = $_GET['phone'];
     $email = $_GET['email'];
