@@ -3,12 +3,12 @@ include 'LeenDB.php';
 
 $successMessage = "";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
-    $fullname = $_POST['fullname'];
-    $phone = $_POST['phone'];
-    $email = $_POST['email'];
-    $subject = $_POST['subject'];
-    $message = $_POST['message'];
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET['register'])) {
+    $fullname = $_GET['fullname'];
+    $phone = $_GET['phone'];
+    $email = $_GET['email'];
+    $subject = $_GET['subject'];
+    $message = $_GET['message'];
 
     $sql = "insert INTO messages (fullname, phone, email, subject, message, created_at)
             VALUES ('$fullname', '$phone', '$email', '$subject', '$message', CURDATE())";
