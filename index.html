@@ -1,205 +1,350 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LeenSpace </title>
-    <link rel="shortcut icon" href="Leen2ver.png" type="favicon.png">
-    <link rel="stylesheet" href="style.css">
-
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leen Alfulayt | Web &amp; App Developer</title>
+<meta name="description" content="Leen is a fourth-year software engineering student building web apps, mobile apps and cloud solutions on AWS.">
+<meta property="og:title" content="Leen Alfulayt | Web & App Developer">
+<meta property="og:description" content="Portfolio: AirSense (IoT), Shelfie (mobile) and a salon app design in Figma.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#060b1a">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪐</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Space+Mono&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#060b1a;--glass:rgba(14,22,46,.62);--ink:#e8eeff;--muted:#98a6c8;--line:rgba(150,170,255,.2);--accent:#3fe0d0;--accent-ink:#04121a;--violet:#8b7bff;--star:#ffd27a;--r:16px;--max:1040px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;color:var(--ink);font:400 1.05rem/1.75 "DM Sans",system-ui,sans-serif;background:
+ radial-gradient(900px 600px at 85% -5%,rgba(139,123,255,.28),transparent 60%),
+ radial-gradient(800px 600px at 5% 40%,rgba(63,224,208,.12),transparent 60%),
+ radial-gradient(900px 700px at 90% 95%,rgba(139,123,255,.18),transparent 60%),var(--bg);background-attachment:fixed}
+h1,h2,h3{font-family:"Space Grotesk","DM Sans",sans-serif;line-height:1.2;margin:0}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--star);outline-offset:3px;border-radius:6px}
+[hidden]{display:none!important}
+#stars{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.meteor{position:fixed;top:12%;inset-inline-start:60%;width:120px;height:2px;background:linear-gradient(90deg,transparent,#fff);transform:rotate(35deg);opacity:0;z-index:-1;animation:meteor 11s linear infinite 3s}
+@keyframes meteor{0%{opacity:0;transform:translate(0,0) rotate(35deg)}3%{opacity:1}12%{opacity:0;transform:translate(-420px,300px) rotate(35deg)}100%{opacity:0}}
+.wrap{max-width:var(--max);margin:auto;padding:0 20px}
+section{padding:72px 0}
+.label{font:400 .85rem "Space Mono",monospace;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;margin:0 0 8px}
+section h2{font-size:2rem;margin-bottom:26px}
+p{margin:0 0 14px;max-width:62ch}
+#bar{position:fixed;top:0;inset-inline-start:0;height:3px;width:0;background:linear-gradient(90deg,var(--violet),var(--accent));z-index:20}
+header{position:sticky;top:0;z-index:10;background:rgba(6,11,26,.7);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px;flex-wrap:wrap}
+.logo{font:700 1.15rem "Space Grotesk",sans-serif;color:var(--ink);text-decoration:none}
+.logo span{color:var(--accent)}
+nav{display:flex;gap:4px;flex-wrap:wrap}
+nav a{color:var(--muted);text-decoration:none;padding:6px 12px;border-radius:999px;font-size:.95rem;transition:background .2s,color .2s}
+nav a:hover,nav a.on{background:rgba(63,224,208,.12);color:var(--accent)}
+.hero{padding:64px 0 56px}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center}
+.hero h1{font-size:clamp(2.6rem,7vw,4.4rem);font-weight:700;margin-bottom:12px}
+.typed{font:500 clamp(1.3rem,3.4vw,1.9rem) "Space Grotesk",sans-serif;color:var(--accent);min-height:1.5em;margin-bottom:16px}
+.typed::after{content:"";display:inline-block;width:3px;height:1em;background:var(--accent);margin-inline-start:4px;vertical-align:-.12em;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero p.lead{font-size:1.12rem;color:var(--muted)}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.btn{display:inline-block;padding:11px 22px;border-radius:999px;border:1.5px solid var(--accent);color:var(--accent);text-decoration:none;font-weight:500;background:none;font-family:inherit;font-size:1rem;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.btn.pri{background:var(--accent);color:var(--accent-ink)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(63,224,208,.3)}
+.space{position:relative;justify-self:center;width:min(300px,70vw);aspect-ratio:1;animation:float 7s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-12px)}}
+.planet{position:absolute;inset:18%;border-radius:50%;z-index:1;background:radial-gradient(circle at 30% 28%,#9ff7ee,#2aa9b8 38%,#1c4f8f 70%,#0a1a3d);box-shadow:0 0 60px rgba(63,224,208,.35),inset -22px -18px 40px rgba(4,10,30,.65)}
+.ring{position:absolute;inset:36% -4%;border-radius:50%;border:3px solid rgba(255,210,122,.75);transform:rotate(-18deg)}
+.ring.back{z-index:0}
+.ring.front{z-index:2;clip-path:inset(50% 0 0 0)}
+.orbit{position:absolute;inset:0;z-index:3;animation:spin 16s linear infinite}
+.orbit i{position:absolute;top:2%;left:50%;width:18px;height:18px;margin-left:-9px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff,#b9c4e6 60%,#6a7599);box-shadow:0 0 14px rgba(255,255,255,.5)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.cols{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.box{background:var(--glass);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:var(--r);padding:24px;transition:border-color .25s,transform .25s,box-shadow .25s}
+.box:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 10px 30px rgba(63,224,208,.12)}
+.box h3{font-size:1.1rem;margin-bottom:10px}
+.box p:last-child{margin:0}
+.tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.tags li{border:1px solid var(--line);background:rgba(139,123,255,.1);border-radius:8px;padding:2px 12px;font-size:.9rem;transition:all .2s}
+.tags li:hover{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.skills .box{display:grid;gap:12px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.filters button{border:1.5px solid var(--line);background:var(--glass);color:var(--ink);border-radius:999px;padding:6px 16px;font:inherit;font-size:.95rem;cursor:pointer;transition:all .2s}
+.filters button[aria-pressed=true]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.proj{display:grid;grid-template-columns:1fr 1.1fr;gap:28px;align-items:center;padding:24px 0;border-top:1px solid var(--line)}
+.proj.alt .pimg{order:2}
+.pimg{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);aspect-ratio:16/10;padding:20px;background:radial-gradient(circle at 50% 0%,rgba(139,123,255,.35),rgba(14,22,46,.7) 70%);transition:box-shadow .3s}
+.proj:hover .pimg{box-shadow:0 0 40px rgba(139,123,255,.3)}
+.pimg img{width:100%;height:100%;object-fit:contain;display:block;border-radius:12px;filter:drop-shadow(0 14px 24px rgba(0,0,0,.5));transition:transform .5s}
+.proj:hover .pimg img{transform:scale(1.04)}
+.proj.wide{grid-template-columns:1fr}
+.shots{display:flex;gap:clamp(6px,2vw,20px);justify-content:center;padding:22px clamp(10px,3vw,24px);border-radius:var(--r);border:1px solid var(--line);background:radial-gradient(circle at 50% 0%,rgba(139,123,255,.35),rgba(14,22,46,.7) 70%)}
+.shots img{flex:1 1 0;min-width:0;max-width:165px;height:auto;display:block;filter:drop-shadow(0 14px 24px rgba(0,0,0,.5));transition:transform .4s}
+.shots img:hover{transform:translateY(-8px)}
+.mission{font:400 .8rem "Space Mono",monospace;color:var(--violet);letter-spacing:.08em;text-transform:uppercase;margin:0 0 6px}
+.proj h3{font-size:1.5rem;margin-bottom:8px}
+.proj .tags{margin:12px 0 16px}
+.badge{margin-inline-start:10px;font:400 .72rem "Space Mono",monospace;background:var(--star);color:#2b1d00;padding:2px 10px;border-radius:999px;vertical-align:middle}
+ul.courses{padding:0;margin:0;list-style:none;display:grid;gap:10px}
+ul.courses li{background:var(--glass);border:1px solid var(--line);border-radius:10px;padding:10px 16px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+ul.courses small{color:var(--muted)}
+.social{list-style:none;padding:0;margin:28px 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.social a{display:block;background:var(--glass);border:1px solid var(--line);border-radius:10px;padding:10px 16px;text-decoration:none;transition:border-color .2s,transform .2s}
+.social a:hover{border-color:var(--accent);transform:translateX(4px)}
+footer{border-top:1px solid var(--line);padding:24px 0;text-align:center;color:var(--muted);font-size:.9rem}
+#top{position:fixed;bottom:20px;inset-inline-end:20px;width:44px;height:44px;border-radius:50%;border:none;background:var(--accent);color:var(--accent-ink);font-size:1.2rem;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .25s;box-shadow:0 0 20px rgba(63,224,208,.5)}
+#top.show{opacity:1;pointer-events:auto}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+.rv.in{opacity:1;transform:none}
+@media (max-width:760px){.hero .wrap,.cols,.proj{grid-template-columns:1fr}.space{order:-1;width:200px}.proj.alt .pimg{order:0}section{padding:48px 0}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}.rv{opacity:1;transform:none}.meteor{display:none}}
+</style>
 </head>
-
 <body>
+<canvas id="stars" aria-hidden="true"></canvas>
+<div class="meteor" aria-hidden="true"></div>
+<div id="bar"></div>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#home">Leen<span>.</span>Alfulayt</a>
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-<div id="chatbot-icon">💬</div>
+<main>
+<section class="hero" id="home">
+  <div class="wrap">
+    <div>
+      <p class="label">Software engineer · in orbit</p>
+      <h1>Hi, I'm Leen</h1>
+      <p class="typed" aria-live="off">I build <span id="typed">web apps</span></p>
+      <p class="lead">Fourth-year software engineering student. I design and build apps that are simple to use, quick to load and ready to scale in the cloud.</p>
+      <div class="btns">
+        <a class="btn pri" href="#projects">See my projects</a>
+        <a class="btn" href="Leen-cv-ats.pdf" download>Download CV</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <div class="space" aria-hidden="true">
+      <div class="ring back"></div>
+      <div class="planet"></div>
+      <div class="ring front"></div>
+      <div class="orbit"><i></i></div>
+    </div>
+  </div>
+</section>
 
-<div id="chatbot-container" class="hidden">
-    <div id="chatbot-header">
-        <span>Chatbot</span>
-        <button id="close-btn">&times;</button>  
+<section id="about">
+  <div class="wrap">
+    <p class="label">01 · About</p>
+    <h2>About me</h2>
+    <div class="cols">
+      <div class="box rv">
+        <h3>What I enjoy</h3>
+        <p>I like the part of tech where systems get built and problems get solved: apps, websites, databases, and the cloud services that keep them running.</p>
+        <p>Every project is a chance to put what I've learned into practice.</p>
+      </div>
+      <div class="box rv">
+        <h3>Where I'm heading</h3>
+        <p>I want to build digital products with real impact: secure, flexible platforms that use web, cloud and AI to meet what people actually need.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="skills">
+  <div class="wrap">
+    <p class="label">02 · Toolkit</p>
+    <h2>Skills</h2>
+    <div class="cols">
+      <div class="box rv"><h3>Web &amp; mobile</h3>
+        <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>React Native</li><li>Express.js</li><li>PHP</li></ul></div>
+      <div class="box rv"><h3>Cloud &amp; data</h3>
+        <ul class="tags"><li>AWS</li><li>VPC</li><li>SQL</li><li>MySQL</li><li>MongoDB</li><li>Appwrite</li></ul></div>
+      <div class="box rv"><h3>Languages</h3>
+        <ul class="tags"><li>Python</li><li>Java</li><li>C++</li><li>C#</li></ul></div>
+      <div class="box rv"><h3>Tools</h3>
+        <ul class="tags"><li>Git</li><li>GitHub</li><li>Figma</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <p class="label">03 · Missions</p>
+    <h2>Projects</h2>
+    <div class="filters" role="group" aria-label="Filter projects">
+      <button type="button" data-f="all" aria-pressed="true">All</button>
+      <button type="button" data-f="iot" aria-pressed="false">IoT</button>
+      <button type="button" data-f="mobile" aria-pressed="false">Mobile</button>
+      <button type="button" data-f="design" aria-pressed="false">Design</button>
     </div>
 
-    <div id="chatbot-body">
-        <div id="chatbot-messages"></div>
-    </div>
+    <article class="proj wide rv" data-cat="iot mobile">
+      <div>
+        <p class="mission">Mission 01</p>
+        <h3>AirSense<span class="badge">Featured</span></h3>
+        <p>Live air-quality readings from ESP32 sensors. An Express.js REST API stores the data in MongoDB, and a React Native app shows it in real time.</p>
+        <ul class="tags"><li>ESP32</li><li>Express.js</li><li>MongoDB</li><li>React Native</li></ul>
+        <a class="btn" href="https://github.com/Leen223/AirSense-React-app" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+      <div class="shots">
+        <img src="AirSensemain-portrait.png" alt="AirSense welcome screen" width="1419" height="2796" loading="lazy">
+        <img src="aairsense15-2.png" alt="AirSense create account screen" width="1419" height="2796" loading="lazy">
+        <img src="airsense15-1.png" alt="AirSense dashboard with live sensor readings" width="1419" height="2796" loading="lazy">
+      </div>
+    </article>
 
-    <div id="chatbot-input-container">
-        <input type="text" id="chatbot-input" placeholder="Type a message..."/>
-        <button id="send-btn">Send</button>
-    </div>
-</div>
-    <header class="header">
-        <a href="#home" class="logo"> Leen<span>Space </span></a>
+    <article class="proj wide rv" data-cat="mobile">
+      <div>
+        <p class="mission">Mission 02</p>
+        <h3>Shelfie App</h3>
+        <p>A mobile app for keeping track of your books and personal belongings, built with Expo and React Native on an Appwrite backend.</p>
+        <ul class="tags"><li>Expo</li><li>React Native</li><li>Appwrite</li></ul>
+        <a class="btn" href="https://github.com/Leen223/Shelfie-ReactApp" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+      <div class="shots">
+        <img src="Shelfie15-part2-portrait.png" alt="Shelfie home screen" width="1419" height="2796" loading="lazy">
+        <img src="Shelfie-main.png" alt="Shelfie reading list screen" width="1419" height="2796" loading="lazy">
+        <img src="shelfie15-part3-portrait.png" alt="Shelfie add a new book screen" width="1419" height="2796" loading="lazy">
+      </div>
+    </article>
 
-        <i class='bx bx-menu' id="menu-icon"></i>
+ <article class="proj wide rv" data-cat="design">
+  <div>
+    <p class="mission">Mission 03</p>
+    <h3>Salon app</h3>
+    <p>An interface design for managing a women's salon, made in Figma with a focus on clear flows and an easy experience.</p>
+    <ul class="tags"><li>Figma</li><li>UX</li><li>UI</li></ul>
+    <a class="btn" href="https://www.figma.com/proto/5ZBky5nFRL7RMAaB0oR6f0/salon-app?page-id=0%3A1&node-id=1-2&p=f&viewport=125%2C189%2C0.59&t=yJpR8T3PpfvCRKNu-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A2" target="_blank" rel="noopener">View prototype in Figma</a>
+  </div>
+  <div class="shots">
+    <img src="splash-screen.png" alt="Salon app home screen" width="1419" height="2796" loading="lazy">
+    <img src="login-screen.png" alt="Salon app booking screen" width="1419" height="2796" loading="lazy">
+    <img src="home-page.png" alt="Salon app profile screen" width="1419" height="2796" loading="lazy">
+  </div>
+</article>
+  </div>
+</section>
 
-        <nav class="navbar">
-            <a href="#home" class="active">الصفحة الرئيسية</a>
-            <a href="#services">عن لين</a>
-            <a href="#testimonials"> مجالاتي</a>
-            <a href="#contact">تواصل</a>
-        </nav>
-    </header>
+<section id="courses">
+  <div class="wrap">
+    <p class="label">04 · Training log</p>
+    <h2>Courses </h2>
+    <ul class="courses">
+      <li class="rv">Python Basics <small>University of Michigan</small></li>
+      <li class="rv">Python Classes and Inheritance <small>University of Michigan</small></li>
+      <li class="rv">Python Functions, Files, and Dictionaries <small>University of Michigan</small></li>
+      <li class="rv">Getting Started with Front-End and Web Development <small>IBM</small></li>
+      <li class="rv">Create a Virtual Private Cloud (VPC) Using AWS <small>AWS</small></li>
+    </ul>
+  </div>
+</section>
 
-    <section class="home" id="home">
-        <div class="home-content">
-            <h1> اهلا انا <span>  لين</span></h1>
-            <h3 class="text-animation"> <span> </span></h3>
-            <p>اهلا بكم في مساحة لين</p>
-            <p>
-أنا لين، طالبة في السنة الرابعة تخصص هندسة برمجيات، شغوفة بتطوير المواقع والتطبيقات، ومهتمة بتقنيات الحوسبة السحابية. أطمح إلى بناء حلول رقمية مبتكرة تسهم في تحسين تجربة المستخدم وتواكب تطورات التقنية الحديثة.
-أتمنى أن ينال موقعي إعجابكم ويعكس جزءًا من شغفي في هذا المجال.
-            </p>
+<section id="contact">
+  <div class="wrap">
+    <p class="label">05 · Contact</p>
+    <h2>Let's talk</h2>
+    <p>The best way to reach me is by email, or find me on the platforms below.</p>
+    <a class="btn pri" id="mail" href="#">Email</a>
+    <ul class="social">
+      <li><a href="https://www.linkedin.com/in/leen-alfulayt-118824346/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://github.com/Leen223" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://x.com/leenswe" target="_blank" rel="noopener">X</a></li>
+    </ul>
+  </div>
+</section>
+</main>
 
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/leen-alfulayt-118824346/?trk=public-profile-join-page"><i class='bx bxl-linkedin'></i></a>
-                <a href="https://github.com/Leen223"><i class='bx bxl-github'></i></a>
-                <a href="https://www.instagram.com/leencoder?igsh=cXZxMndwY2ptamZx"><i class='bx bxl-instagram-alt'></i></a>
-                <a href="https://x.com/leenswe?s=21"><i class='bx bxl-twitter'></i></a>
-            </div>
+<footer>© <span id="y"></span> Leen Alfulayt. All rights reserved.</footer>
+<button id="top" type="button" aria-label="Back to top">↑</button>
 
-            <div class="btn-group">
-                <a href="#contact" class="btn">اضغط هنا</a>
-            </div>
-        </div>
-        <div class="home-img">
-            <img src="me.jpg" alt="">
-        </div>
-    </section>
-
-    <section class="services" id="services">
-        <h2 class="heading"> عن <span>مساحة</span> لين</h2>
-        <div class="services-container">
-            <div class="service-box">
-                <div class="service-info">
-                    <h4>🚀  اهتماماتي</h4>
-                    <p>
-اهتمامي ينصب على جوهر التقنية، حيث تُبنى الأنظمة وتُحل المشكلات. أجد شغفي في تطوير التطبيقات، بناء مواقع الويب، التعامل مع قواعد البيانات، وربط الحلول البرمجية بالحوسبة السحابية لتحقيق أداء فعّال وقابل للتوسع. أتعامل مع الأكواد كأدوات تفكير، وأعتبر كل مشروع فرصة لتطبيق المفاهيم البرمجية بشكل عملي واحترافي. أتعلم باستمرار، لأن عالم البرمجة لا يتوقف، وأنا كذلك.
-
-
-                    </p>
-
-                </div>
-            </div>
-
-            <div class="service-box">
-                <div class="service-info">
-                    <h4>📱  لغات وتقنيات</h4>
-             <p>
-أتعامل مع التقنية كأنها لغة أُتقنها، وأستخدم أدواتها لبناء حلول ذكية وعملية:<br>
-- HTML و CSS: أُنشئ واجهات ويب جذابة ومتجاوبة<br>
-- JavaScript: أُضيف التفاعلية والحيوية لتجارب المستخدم<br>
-- AWS: أُوظف الحوسبة السحابية لتوسيع نطاق التطبيقات، وتحقيق الأداء العالي<br>
-- SQL و MySQL: أُتقن تصميم قواعد البيانات، وتحليلها بكفاءة<br>
-- Java، PHP، C++، Python، C# <br>
-- Git و GitHub: أُدير الأكواد بشكل منظم، وأتعاون في المشاريع البرمجية بكفاءة<br>
-</p>
-
-                </div>
-            </div>
-
-            <div class="service-box">
-                <div class="service-info">
-                    <h4>📝  دورات ومعسكرات</h4>
-                    <p>
-                        
-                        Python Basics University of Michigan <br>
-                        Python Classes and Inheritance University of Michigan<br>
-                        Python Functions, Files, and Dictionaries University of Michigan<br>
-                        Getting Started with Front-End and Web Development IBM<br>
-                        Create a Virtual Private Cloud (VPC) Using AWS<br>
-                        معسكر تطوير الويب لهاش بلس
-                    </p>
-
-                </div>
-            </div>
-
-            <div class="service-box">
-                <div class="service-info">
-                    <h4>🎯رؤيتي المستقبلية 
-</h4>
-                    <p>
-أسعى لأن أكون مطورة حلول رقمية ذات تأثير حقيقي، أستخدم مهاراتي في تطوير الويب والحوسبة السحابية لبناء أنظمة ذكية تُسهم في تحسين جودة حياة الأفراد والمجتمعات. أؤمن بأن التقنية ليست مجرد أدوات، بل هي لغة التغيير، وجسر يصل بين التحديات اليومية والحلول المبتكرة. رؤيتي تتمثل في أن أكون جزءًا من مشاريع تقنية تدمج بين الإبداع والوظيفة، وتخدم أهدافًا إنسانية واجتماعية.
-أطمح إلى تطوير منصات رقمية مرنة وآمنة، تعتمد على تقنيات حديثة مثل الذكاء الاصطناعي والخدمات السحابية، وتُراعي احتياجات المستخدمين الحقيقية. أرى نفسي في المستقبل قائدة تقنية تساهم في بناء بيئة رقمية أكثر شمولًا واستدامة.
-
-                    </p>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-  
+<script>
+const EMAIL = "Leenalfulayt04@gmail.com";
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const calm = matchMedia("(prefers-reduced-motion:reduce)").matches;
+const mail = $("#mail"); mail.href = "mailto:" + EMAIL; mail.textContent = EMAIL;
+$("#y").textContent = new Date().getFullYear();
 
 
-    <section class="testimonials" id="testimonials">
-        <div class="testimonials-box">
-            <h2 class="heading">ابرز مشاريعي</h2>
+const cv = $("#stars"), cx = cv.getContext("2d");
+let stars = [];
+function setup() {
+  cv.width = innerWidth; cv.height = innerHeight;
+  stars = Array.from({length: Math.round(innerWidth * innerHeight / 7000)}, () => ({
+    x: Math.random() * cv.width, y: Math.random() * cv.height,
+    r: Math.random() * 1.3 + .3, d: Math.random() * .5 + .1, p: Math.random() * 6.28, s: Math.random() * .02 + .005
+  }));
+}
+function draw() {
+  cx.clearRect(0, 0, cv.width, cv.height);
+  const sy = scrollY;
+  for (const s of stars) {
+    const y = ((s.y - sy * s.d) % cv.height + cv.height) % cv.height;
+    s.p += s.s;
+    cx.globalAlpha = .45 + .55 * Math.abs(Math.sin(s.p));
+    cx.fillStyle = s.r > 1.2 ? "#ffe9b5" : "#dfe8ff";
+    cx.beginPath(); cx.arc(s.x, y, s.r, 0, 6.28); cx.fill();
+  }
+  if (!calm) requestAnimationFrame(draw);
+}
+setup(); draw();
+addEventListener("resize", () => { setup(); if (calm) draw(); });
+if (calm) addEventListener("scroll", draw, {passive: true});
 
-            <div class="wrapper">
-                <div class="testimonial-item">
-                    <img src="AirSenseIotapp.png" alt="">
-                    <h2> AirSense </h2>
-                    <p> AirSense هو تطبيق يعرض جودة الهواء لحظيًا باستخدام مستشعرات متصلة بـ ESP32.
-                         بنيت خادمًا بـ Express.js يوفر REST API لإرسال واستقبال البيانات وتخزينها في MongoDB، بينما يقوم تطبيق React Native بجلب البيانات وعرضها بشكل مباشر.</p>
-                    <a href="https://github.com/Leen223/AirSense-React-app" class="btn">عرض المشروع</a>
-                 </div>
 
-                <div class="testimonial-item">
-                    <img src="ShelfieApp.png" alt="">
-                    <h2>Shelfie App  </h2>
-                    <p> Shelfie App هو تطبيق موبايل لإدارة الكتب والمتعلقات الشخصية، طورته باستخدام Expo + React Native مع Backend مبني على Appwrite.</p>
-                    <a href="https://github.com/Leen223/Shelfie-ReactApp" class="btn">عرض المشروع</a>                    
-                </div>
+const links = $$("nav a");
+const nav = new IntersectionObserver(es => es.forEach(en => {
+  if (en.isIntersecting) links.forEach(a => a.classList.toggle("on", a.getAttribute("href") === "#" + en.target.id));
+}), {rootMargin: "-40% 0px -55% 0px"});
+$$("main section[id]").forEach(s => nav.observe(s));
 
-                <div class="testimonial-item">
-                    <img src="salon-app.png" alt="">
-                    <h2> تصميم واجهة تطبيق لادارة صالون نسائي  باستعمال Figma</h2>
-                    <p> تصميم واجهة تطبيق باستخدام Figma، مع التركيز على تجربة المستخدم والتصميم الجذاب.</p>
-                         <a href="https://www.figma.com/proto/5ZBky5nFRL7RMAaB0oR6f0/salon-app?page-id=0%3A1&node-id=1-2&p=f&viewport=125%2C189%2C0.59&t=yJpR8T3PpfvCRKNu-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A2" class="btn">عرض المشروع</a>                    
-                </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="contact" id="contact">
-        <h2 class="heading">تواصل <span>معي</span></h2>
-<form action="submit_form.php" method="POST">
-    <div class="input-group">
-        <div class="input-box">
-            <input type="text" name="fullname" placeholder="Full Name" required>
-            <input type="email" name="email" placeholder="Email" required>
-        </div>
-        <div class="input-box">
-            <input type="number" name="phone" placeholder="Phone Number">
-            <input type="text" name="subject" placeholder="Subject" required>
-        </div>
-    </div>
+const rv = new IntersectionObserver(es => es.forEach(en => {
+  if (en.isIntersecting) { en.target.classList.add("in"); rv.unobserve(en.target); }
+}), {threshold: .15});
+$$(".rv").forEach(el => rv.observe(el));
 
-    <div class="input-group-2">
-        <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
-        <input type="submit" name="register" value="Send Message" class="btn">
-    </div>
-</form>
-    </section>
 
-    <footer class="footer">
-        <div class="social">
-             <a href="https://www.linkedin.com/in/leen-alfulayt-118824346/?trk=public-profile-join-page"><i class='bx bxl-linkedin'></i></a>
-                <a href="https://github.com/Leen223"><i class='bx bxl-github'></i></a>
-                <a href="https://www.instagram.com/leencoder?igsh=cXZxMndwY2ptamZx"><i class='bx bxl-instagram-alt'></i></a>
-                <a href="https://x.com/leenswe?s=21"><i class='bx bxl-twitter'></i></a>
-        </div>
+const words = ["web apps", "mobile apps", "cloud solutions", "IoT dashboards"];
+const out = $("#typed");
+if (!calm) {
+  let w = 0, c = 0, del = false;
+  (function tick() {
+    const word = words[w];
+    out.textContent = word.slice(0, c);
+    if (!del && c === word.length) { del = true; return setTimeout(tick, 1400); }
+    if (del && c === 0) { del = false; w = (w + 1) % words.length; }
+    c += del ? -1 : 1;
+    setTimeout(tick, del ? 40 : 90);
+  })();
+}
 
-        <p class="copyright">
-            ©  LeenSpace | جميع الحقوق محفوظه
-        </p>
-    </footer>
 
-    <script src="script.js"></script>
+$$(".filters button").forEach(b => b.addEventListener("click", () => {
+  $$(".filters button").forEach(x => x.setAttribute("aria-pressed", x === b));
+  const f = b.dataset.f;
+  let n = 0;
+  $$(".proj").forEach(p => {
+    const show = f === "all" || p.dataset.cat.split(" ").includes(f);
+    p.hidden = !show;
+    p.classList.toggle("alt", show && n++ % 2 === 1);
+  });
+}));
+$$(".proj").forEach((p, i) => p.classList.toggle("alt", i % 2 === 1));
+
+
+const bar = $("#bar"), toTop = $("#top");
+addEventListener("scroll", () => {
+  const h = document.documentElement;
+  bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + "%";
+  toTop.classList.toggle("show", h.scrollTop > 600);
+}, {passive: true});
+toTop.addEventListener("click", () => scrollTo({top: 0}));
+</script>
 </body>
-
 </html>
