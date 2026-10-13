@@ -70,9 +70,6 @@ nav a:hover,nav a.on{background:rgba(63,224,208,.12);color:var(--accent)}
 .tags li{border:1px solid var(--line);background:rgba(139,123,255,.1);border-radius:8px;padding:2px 12px;font-size:.9rem;transition:all .2s}
 .tags li:hover{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
 .skills .box{display:grid;gap:12px}
-.hint{font-size:.9rem;color:var(--muted);display:flex;align-items:center;gap:8px;margin-bottom:20px}
-.hint .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent)}
-.skills .tags li.used{border-color:var(--accent);background:rgba(63,224,208,.14)}
 .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
 .filters button{border:1.5px solid var(--line);background:var(--glass);color:var(--ink);border-radius:999px;padding:4px 14px;font:inherit;font-size:.85rem;cursor:pointer;transition:all .2s}
 .filters button[aria-pressed=true]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
@@ -197,7 +194,6 @@ footer{border-top:1px solid var(--line);padding:24px 0;text-align:center;color:v
   <div class="wrap">
     <p class="label">02 · Toolkit</p>
     <h2>Skills</h2>
-    <p class="hint"><span class="dot"></span> Highlighted skills are the ones I used in my projects.</p>
     <div class="cols">
       <div class="box rv"><h3>Web &amp; mobile</h3>
         <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Node.js</li><li>Express.js</li><li>React Native</li><li>Expo</li><li>PHP</li></ul></div>
@@ -308,7 +304,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;text-align:center;color:v
 <dialog id="lb" aria-label="Screenshot preview"><img alt=""></dialog>
 
 <script>
-const EMAIL = "Leenalfulayt04@gmail.com";
+const EMAIL = "leenalfulayt04@gmail.com";
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
 const calm = matchMedia("(prefers-reduced-motion:reduce)").matches;
 const mail = $("#mail"); mail.href = "mailto:" + EMAIL; mail.textContent = EMAIL;
@@ -381,16 +377,6 @@ $$(".filters button").forEach(b => b.addEventListener("click", () => {
   });
 }));
 $$(".proj").forEach((p, i) => p.classList.toggle("alt", i % 2 === 1));
-
-
-// highlight skills that appear in project tags
-const used = new Set($$(".proj .tags li").map(li => li.textContent.trim()));
-$$(".skills .tags li").forEach(li => {
-  if (used.has(li.textContent.trim())) {
-    li.classList.add("used");
-    li.title = "Used in my projects";
-  }
-});
 
 
 // click a screenshot to enlarge it
